@@ -1,5 +1,6 @@
 package com.lzp.baseui.activity;
 
+import android.arch.lifecycle.LifecycleObserver;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -35,6 +36,13 @@ public abstract class BaseActivity extends FragmentActivity{
         initView();
         // 加载数据
         loadData();
+
+        this.getLifecycle().addObserver(new LifecycleObserver() {
+            @Override
+            public int hashCode() {
+                return super.hashCode();
+            }
+        });
     }
 
     /**
@@ -99,6 +107,13 @@ public abstract class BaseActivity extends FragmentActivity{
      * 确认返回的操作
      */
     protected void confirmBack() {
+    }
+
+    /**
+     * 添加生命周期观察者
+     * */
+    public void addLifeCycleObserver(LifecycleObserver observer){
+        getLifecycle().addObserver(observer);
     }
 
     /**

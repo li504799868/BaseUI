@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.util.AttributeSet;
 
-import com.lzp.baseui.recyclerview.util.NetUtil;
+import com.lzp.baseui.util.NetUtil;
 
 import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
@@ -13,7 +13,7 @@ import in.srain.cube.views.ptr.PtrUIHandlerHook;
 
 /**
  * 封装PtrClassicFrameLayout
- *
+ * <p>
  * author li.zhipeng
  */
 public class CustomPtrClassicFrameLayout extends PtrClassicFrameLayout {
@@ -22,7 +22,7 @@ public class CustomPtrClassicFrameLayout extends PtrClassicFrameLayout {
 
     /**
      * 刷新成功的延迟时间
-     * */
+     */
     private int refreshCompleteDelay = 1000;
 
     public CustomPtrClassicFrameLayout(Context context) {
@@ -83,7 +83,7 @@ public class CustomPtrClassicFrameLayout extends PtrClassicFrameLayout {
 
     /**
      * 设置刷新成功的延迟时间
-     * */
+     */
     public void setRefreshCompleteDelay(int refreshCompleteDelay) {
         this.refreshCompleteDelay = refreshCompleteDelay;
     }
@@ -98,7 +98,7 @@ public class CustomPtrClassicFrameLayout extends PtrClassicFrameLayout {
 
         /**
          * 刷新失败，会在无网络的时候，回调此方法
-         * */
+         */
         void onPullRefreshFailed();
     }
 }

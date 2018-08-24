@@ -91,6 +91,15 @@ public abstract class BaseRecycleViewAdapter<T> extends RecyclerView.Adapter<Rec
         mFooterViews.add(footerView);
     }
 
+    /**
+     * 可以添加多个尾视图
+     *
+     * @param footerView 尾视图
+     */
+    public void addFooterView(View footerView, int position) {
+        mFooterViews.add(position, footerView);
+    }
+
     public void removeHeaderView(View headerView) {
         mHeaderViews.remove(headerView);
     }

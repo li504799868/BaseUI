@@ -33,6 +33,13 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     /**
      * 私有化构造方法，只能够通过静态方法进行创建
      */
+    public RecyclerViewHolder(View itemView) {
+        super(itemView);
+    }
+
+    /**
+     * 私有化构造方法，只能够通过静态方法进行创建
+     */
     private RecyclerViewHolder(Context context, View itemView) {
         super(itemView);
         mContext = context;

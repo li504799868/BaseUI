@@ -1,6 +1,7 @@
 package com.lzp.baseui.fragment;
 
 import android.app.Activity;
+import android.arch.lifecycle.LifecycleObserver;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -176,6 +177,13 @@ public abstract class BaseFragment extends Fragment {
      */
     public void setLazyLoad(boolean lazyLoad) {
         this.isLazyLoad = lazyLoad;
+    }
+
+    /**
+     * 添加生命周期观察者
+     */
+    public void addLifeCycleObserver(LifecycleObserver observer) {
+        getLifecycle().addObserver(observer);
     }
 
 }

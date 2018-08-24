@@ -1,4 +1,4 @@
-package com.lzp.baseui.recyclerview.util;
+package com.lzp.baseui.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -10,10 +10,6 @@ import android.net.NetworkInfo;
  *      网络相关工具类
  */
 public class NetUtil {
-
-    private static final int NETWORK_NONE = 0;
-    private static final int NETWORK_WIFI = 1;
-    private static final int NETWORK_MOBILE = 2;
 
     /**
      * 网络是否可用
