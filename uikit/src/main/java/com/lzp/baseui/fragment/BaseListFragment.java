@@ -1,7 +1,12 @@
 package com.lzp.baseui.fragment;
 
+import android.support.v7.widget.RecyclerView;
+
 import com.lzp.baseui.R;
+import com.lzp.baseui.recyclerview.BaseRecycleViewAdapter;
 import com.lzp.baseui.view.recyclerview.RefreshAndLoadRecyclerView;
+
+import java.util.List;
 
 /**
  * Created by li.zhipeng on 2018/8/24.
@@ -9,7 +14,7 @@ import com.lzp.baseui.view.recyclerview.RefreshAndLoadRecyclerView;
  * 封装的数据列表Fragment
  */
 public abstract class BaseListFragment<T> extends BaseFragment
-        implements RefreshAndLoadRecyclerView.OnRefreshAndLoadListener{
+        implements RefreshAndLoadRecyclerView.OnRefreshAndLoadListener {
 
     protected RefreshAndLoadRecyclerView<T> refreshAndLoadRecyclerView;
 
@@ -22,6 +27,28 @@ public abstract class BaseListFragment<T> extends BaseFragment
     protected void initView() {
         refreshAndLoadRecyclerView = findViewById(R.id.refresh_load_recyclerview);
         refreshAndLoadRecyclerView.setListener(this);
+    }
+
+    public void refreshComplete(){
+        refreshAndLoadRecyclerView.refreshComplete();
+    }
+
+    public void setAdapter(BaseRecycleViewAdapter<String> adapter){
+        refreshAndLoadRecyclerView.setAdapter(adapter);
+    }
+
+    /**
+     * 设置某一页的数据
+     */
+    public void setPageData(List<T> list, String pageTag, boolean isLast) {
+        refreshAndLoadRecyclerView.setPageData(list, pageTag, isLast);
+    }
+
+    /**
+     * 设置某一页的数据
+     */
+    public void setPageData(List<T> list, boolean isLast) {
+        refreshAndLoadRecyclerView.setPageData(list, isLast);
     }
 
 }

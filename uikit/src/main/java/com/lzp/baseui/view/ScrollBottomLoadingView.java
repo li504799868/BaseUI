@@ -1,9 +1,13 @@
 package com.lzp.baseui.view;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 /**
@@ -17,24 +21,41 @@ public class ScrollBottomLoadingView extends ScrollView {
     private int mTouchSlop;
     private OnScrollToBottomListener onScrollToBottom;
 
+    private LinearLayout contentView;
+
     /**
      * 是否要监听滑动到底部的事件
      */
     private boolean canLoad;
 
     public ScrollBottomLoadingView(Context context) {
-        super(context);
-        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+        this(context, null);
     }
 
     public ScrollBottomLoadingView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+        this(context, attrs, 0);
     }
 
     public ScrollBottomLoadingView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+
+        // 添加Child
+        contentView = new LinearLayout(context);
+        contentView.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        addView(contentView, params);
+    }
+
+    public void addView(View child) {
+        contentView.addView(child);
+    }
+
+    public void addView(View child, int position) {
+        contentView.addView(child, position);
     }
 
     @Override

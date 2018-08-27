@@ -2,6 +2,7 @@ package com.lzp.baseui.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.FrameLayout;
 
 /**
@@ -33,6 +34,18 @@ public class RefreshAndLoadScrollView extends CustomPtrClassicFrameLayout {
         addView(scrollBottomLoadingView,
                 FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.MATCH_PARENT);
+    }
+
+    public void addView(View child) {
+        scrollBottomLoadingView.addView(child);
+    }
+
+    public void addView(View child, int position) {
+        scrollBottomLoadingView.addView(child, position);
+    }
+
+    public View getContentView() {
+        return scrollBottomLoadingView.getChildAt(0);
     }
 
     public void setCanLoad(Boolean canLoad) {

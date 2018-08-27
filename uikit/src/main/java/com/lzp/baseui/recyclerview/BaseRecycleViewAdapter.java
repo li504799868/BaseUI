@@ -44,8 +44,15 @@ public abstract class BaseRecycleViewAdapter<T> extends RecyclerView.Adapter<Rec
     /**
      * 构造器
      */
-    protected BaseRecycleViewAdapter(Context context, List<T> mDatas) {
+    protected BaseRecycleViewAdapter(Context context) {
         this.mContext = context;
+    }
+
+    /**
+     * 构造器
+     */
+    protected BaseRecycleViewAdapter(Context context, List<T> mDatas) {
+        this(context);
         this.mDatas = mDatas;
     }
 

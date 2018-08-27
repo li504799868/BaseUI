@@ -1,5 +1,9 @@
 package com.lzp.baseui.fragment;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
 import com.lzp.baseui.R;
 import com.lzp.baseui.view.CustomPtrClassicFrameLayout;
 import com.lzp.baseui.view.RefreshAndLoadScrollView;
@@ -26,6 +30,15 @@ public abstract class BaseScrollFragment extends BaseFragment
         refreshAndLoadScrollView = findViewById(R.id.refresh_load_scrollview);
         refreshAndLoadScrollView.setListener(this);
         refreshAndLoadScrollView.setOnScrollToBottomListener(this);
+
+        // 添加内容的View
+        LayoutInflater.from(getContext()).inflate(getContentViewId(), (ViewGroup) refreshAndLoadScrollView.getContentView());
+    }
+
+    protected abstract int getContentViewId();
+
+    public void refreshComplete(){
+        refreshAndLoadScrollView.refreshComplete();
     }
 
 }

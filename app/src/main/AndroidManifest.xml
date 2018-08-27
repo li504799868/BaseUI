@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExtendsbaseActivity" />
-        <activity android:name=".ExtendBaseActivity"></activity>
+        <activity android:name=".ExtendBaseActivity" />
+        <activity android:name=".ViewPagerActivity" />
     </application>
 
 </manifest>

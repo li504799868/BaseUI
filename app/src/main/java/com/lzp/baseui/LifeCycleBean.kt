@@ -9,7 +9,7 @@ import android.widget.Toast
 /**
  * Created by li.zhipeng on 2018/8/24.
  */
-class LifeCycleBean(val context: Context) : LifecycleObserver{
+class LifeCycleBean(private val context: Context) : LifecycleObserver{
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     fun onResume(){

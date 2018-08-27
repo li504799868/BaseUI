@@ -26,13 +26,11 @@ public class CustomPtrClassicFrameLayout extends PtrClassicFrameLayout {
     private int refreshCompleteDelay = 1000;
 
     public CustomPtrClassicFrameLayout(Context context) {
-        super(context);
-        init(context);
+        this(context, null);
     }
 
     public CustomPtrClassicFrameLayout(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context);
+        this(context, attrs, 0);
     }
 
     public CustomPtrClassicFrameLayout(Context context, AttributeSet attrs, int defStyle) {
