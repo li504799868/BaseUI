@@ -1,6 +1,5 @@
 package com.lzp.baseui.fragment;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -37,7 +36,7 @@ public abstract class BaseScrollFragment extends BaseFragment
 
     protected abstract int getContentViewId();
 
-    public void refreshComplete(){
+    public void refreshComplete() {
         refreshAndLoadScrollView.refreshComplete();
     }
 

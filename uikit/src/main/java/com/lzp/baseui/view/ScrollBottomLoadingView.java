@@ -26,7 +26,7 @@ public class ScrollBottomLoadingView extends ScrollView {
     /**
      * 是否要监听滑动到底部的事件
      */
-    private boolean canLoad;
+    private boolean canLoad = true;
 
     public ScrollBottomLoadingView(Context context) {
         this(context, null);
@@ -50,11 +50,11 @@ public class ScrollBottomLoadingView extends ScrollView {
         addView(contentView, params);
     }
 
-    public void addView(View child) {
+    public void addChildView(View child) {
         contentView.addView(child);
     }
 
-    public void addView(View child, int position) {
+    public void addChildView(View child, int position) {
         contentView.addView(child, position);
     }
 

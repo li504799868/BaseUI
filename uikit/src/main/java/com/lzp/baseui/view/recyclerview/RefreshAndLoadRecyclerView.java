@@ -61,7 +61,7 @@ public class RefreshAndLoadRecyclerView<T> extends CustomPtrClassicFrameLayout
         recyclerView = new RecyclerView(context);
         recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         recyclerView.setHasFixedSize(true);
-        recyclerView.addOnScrollListener(getEndlessRecyclerOnScrollListener());
+        recyclerView.addOnScrollListener(endlessRecyclerOnScrollListener);
         // 设置默认LoadMoreFooter
         loadMoreFooterState = new DefaultLoadMoreFooter(recyclerView);
         addView(recyclerView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -70,9 +70,7 @@ public class RefreshAndLoadRecyclerView<T> extends CustomPtrClassicFrameLayout
     }
 
 
-    private EndlessRecyclerOnScrollListener getEndlessRecyclerOnScrollListener() {
-        return new EndlessRecyclerOnScrollListener(this);
-    }
+    private EndlessRecyclerOnScrollListener endlessRecyclerOnScrollListener = new EndlessRecyclerOnScrollListener(this);
 
     /**
      * 设置某一页的数据
@@ -120,16 +118,29 @@ public class RefreshAndLoadRecyclerView<T> extends CustomPtrClassicFrameLayout
         this.listener = listener;
     }
 
+    /**
+     * 是否允许滑动在底部自动加载
+     */
     public void setScrollToLoad(boolean scrollToLoad) {
         this.scrollToLoad = scrollToLoad;
     }
 
-    public void setAdapter(@NonNull BaseRecycleViewAdapter adapter) {
+    /**
+     * 设置底部刷新的差值
+     */
+    public void setLoadNextOffsetCount(int loadNextOffsetCount) {
+        this.endlessRecyclerOnScrollListener.setLoadNextOffsetCount(loadNextOffsetCount);
+    }
+
+
+    public void setAdapter(@NonNull BaseRecycleViewAdapter<T> adapter) {
         this.adapter = adapter;
         // 添加新的footer
         if (this.loadMoreFooterState != null) {
-            adapter.addFooterView(this.loadMoreFooterState.getFooterView(), adapter.getFooterViewsCount() - 1);
+            adapter.addFooterView(this.loadMoreFooterState.getFooterView(), adapter.getFooterViewsCount());
         }
+        // 数据和adapter简历绑定关系
+        adapter.setData(mListDataManager.getData());
         recyclerView.setAdapter(adapter);
     }
 

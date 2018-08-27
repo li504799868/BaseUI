@@ -33,7 +33,7 @@ public abstract class BaseListFragment<T> extends BaseFragment
         refreshAndLoadRecyclerView.refreshComplete();
     }
 
-    public void setAdapter(BaseRecycleViewAdapter<String> adapter){
+    public void setAdapter(BaseRecycleViewAdapter<T> adapter){
         refreshAndLoadRecyclerView.setAdapter(adapter);
     }
 

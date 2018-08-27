@@ -15,5 +15,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, ExtendBaseActivity::class.java))
         }
 
+        findViewById<View>(R.id.fragment).setOnClickListener {
+            startActivity(Intent(this@MainActivity, ViewPagerActivity::class.java))
+        }
+
     }
 }

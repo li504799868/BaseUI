@@ -36,12 +36,12 @@ public class RefreshAndLoadScrollView extends CustomPtrClassicFrameLayout {
                 FrameLayout.LayoutParams.MATCH_PARENT);
     }
 
-    public void addView(View child) {
-        scrollBottomLoadingView.addView(child);
+    public void addChildView(View child) {
+        scrollBottomLoadingView.addChildView(child);
     }
 
-    public void addView(View child, int position) {
-        scrollBottomLoadingView.addView(child, position);
+    public void addChildView(View child, int position) {
+        scrollBottomLoadingView.addChildView(child, position);
     }
 
     public View getContentView() {

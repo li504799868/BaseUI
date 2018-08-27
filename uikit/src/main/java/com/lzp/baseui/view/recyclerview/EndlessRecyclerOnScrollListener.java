@@ -108,8 +108,8 @@ public class EndlessRecyclerOnScrollListener extends RecyclerView.OnScrollListen
 
         int visibleItemCount = layoutManager.getChildCount();
         int totalItemCount = layoutManager.getItemCount();
-        // 只有在滚动停止状态才加载下一页
-        if ((visibleItemCount > 0 && (lastVisibleItemPosition) >= totalItemCount - loadNextOffsetCount)) {
+        // 只有在滚动停止状态才加载下一页，
+        if ((visibleItemCount > 0 && (lastVisibleItemPosition) >= totalItemCount - loadNextOffsetCount - 1)) {
             listener.onLoadNextPage(recyclerView);
         }
     }

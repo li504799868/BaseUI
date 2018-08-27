@@ -123,7 +123,7 @@ public class ListDataManager<T> {
     public void onGetListComplete(List<T> data, String pageTag, boolean isLastPage) {
         // 如果是第一页
         if (page == 1) {
-            data.clear();
+            this.data.clear();
         }
         // page自增长+1
         page++;

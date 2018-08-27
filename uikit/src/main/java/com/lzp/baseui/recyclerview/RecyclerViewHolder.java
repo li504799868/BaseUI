@@ -51,16 +51,10 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     /**
      * 通过静态方法得到一个ViewHolder对象
      */
-    public static <VH extends RecyclerViewHolder> VH get(Context context, View convertView,
-                                                         ViewGroup parent, int viewType) {
-        if (convertView == null) {
-            RecyclerViewHolder holder = new RecyclerViewHolder(context, convertView);
-            holder.viewType = viewType;
-            return (VH) holder;
-        } else {
-            RecyclerViewHolder holder = (RecyclerViewHolder) convertView.getTag();
-            return (VH) holder;
-        }
+    public static <VH extends RecyclerViewHolder> VH get(Context context, View convertView, int viewType) {
+        RecyclerViewHolder holder = new RecyclerViewHolder(context, convertView);
+        holder.viewType = viewType;
+        return (VH) holder;
     }
 
 

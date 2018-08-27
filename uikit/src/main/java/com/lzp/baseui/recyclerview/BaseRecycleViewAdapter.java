@@ -226,7 +226,7 @@ public abstract class BaseRecycleViewAdapter<T> extends RecyclerView.Adapter<Rec
             return customHolder;
         } else {
             // 使用通过的ViewHolder
-            return RecyclerViewHolder.get(mContext, itemView, parent, viewType);
+            return RecyclerViewHolder.get(mContext, itemView, viewType);
         }
     }
 

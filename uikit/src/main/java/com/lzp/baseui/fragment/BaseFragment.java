@@ -82,7 +82,7 @@ public abstract class BaseFragment extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isVisibleToUser) {
-            if (!isVisible) {
+            if (!isVisible && rootView != null) {
                 isVisible = true;
                 onVisible();
             }

@@ -13,6 +13,11 @@ class ExtendsBaseListFragment : BaseListFragment<String>() {
         setAdapter(MyAdapter(requireContext()))
     }
 
+    override fun lazyLoad() {
+        super.lazyLoad()
+        addData()
+    }
+
     override fun onPullRefresh(success: Boolean) {
         addData()
         refreshComplete()
@@ -31,10 +36,10 @@ class ExtendsBaseListFragment : BaseListFragment<String>() {
     private inner class MyAdapter(context: Context)
         : BaseRecycleViewAdapter<String>(context) {
 
-        override fun getLayoutId(viewType: Int): Int = android.R.layout.simple_list_item_1
+        override fun getLayoutId(viewType: Int): Int = R.layout.item_text
 
         override fun convert(holder: RecyclerViewHolder, item: String?, position: Int) {
-            holder.setText(android.R.id.text1, item)
+            holder.setText(R.id.textView, item)
         }
 
     }
