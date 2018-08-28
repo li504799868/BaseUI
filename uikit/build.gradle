@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
+apply plugin: 'com.novoda.bintray-release'
+
 android {
     compileSdkVersion 28
 
@@ -42,6 +44,21 @@ dependencies {
     api 'in.srain.cube:ultra-ptr:1.0.11'
 
 }
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+}
+
+// jcenter发布的信息
+publish {
+    userOrg = 'lizp' // 创建repo的位置
+    groupId = 'com.lzp' // 引用的分组名称
+    artifactId = 'BaseUI'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = 'UI基础框架'
+    website = 'https://github.com/li504799868/BaseUI'
+}
+
 repositories {
     mavenCentral()
 }
