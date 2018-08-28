@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".ViewPagerActivity">
 
-    <com.lzp.baseui.ViewPagerIndicator
+    <com.lzp.demo.ViewPagerIndicator
         android:id="@+id/viewpager_indicator"
         android:layout_width="match_parent"
         android:layout_height="50dp"
