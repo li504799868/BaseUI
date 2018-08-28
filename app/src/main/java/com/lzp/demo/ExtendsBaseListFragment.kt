@@ -28,9 +28,9 @@ class ExtendsBaseListFragment : BaseListFragment<String>() {
     }
 
     private fun addData() {
-        setPageData(arrayListOf("111", "111", "111", "111", "111",
-                "111", "111", "111", "111", "111"),
-                "test", false)
+        val data = arrayListOf("111", "111", "111", "111", "111",
+                "111", "111", "111", "111", "111")
+        setPageData(data, false)
     }
 
     private inner class MyAdapter(context: Context)

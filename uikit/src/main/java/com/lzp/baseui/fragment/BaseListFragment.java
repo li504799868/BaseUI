@@ -1,8 +1,10 @@
 package com.lzp.baseui.fragment;
 
-import com.lzp.demo.R;
+import android.util.Log;
+
 import com.lzp.baseui.recyclerview.BaseRecycleViewAdapter;
 import com.lzp.baseui.view.recyclerview.RefreshAndLoadRecyclerView;
+import com.lzp.demo.R;
 
 import java.util.List;
 
@@ -27,11 +29,11 @@ public abstract class BaseListFragment<T> extends BaseFragment
         refreshAndLoadRecyclerView.setListener(this);
     }
 
-    public void refreshComplete(){
+    public void refreshComplete() {
         refreshAndLoadRecyclerView.refreshComplete();
     }
 
-    public void setAdapter(BaseRecycleViewAdapter<T> adapter){
+    public void setAdapter(BaseRecycleViewAdapter<T> adapter) {
         refreshAndLoadRecyclerView.setAdapter(adapter);
     }
 
@@ -46,7 +48,8 @@ public abstract class BaseListFragment<T> extends BaseFragment
      * 设置某一页的数据
      */
     public void setPageData(List<T> list, boolean isLast) {
-        refreshAndLoadRecyclerView.setPageData(list, isLast);
+        Log.e("lzp", "setPageData");
+        setPageData(list, "", isLast);
     }
 
 }

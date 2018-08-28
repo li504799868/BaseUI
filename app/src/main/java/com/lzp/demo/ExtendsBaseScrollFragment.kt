@@ -20,7 +20,7 @@ class ExtendsBaseScrollFragment : BaseScrollFragment() {
 
     override fun onPullRefresh() {
         handler.postDelayed({
-            Toast.makeText(context, "onPullRefreshFailed", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "onPullRefresh", Toast.LENGTH_SHORT).show()
             refreshComplete()
         }, 2000)
 

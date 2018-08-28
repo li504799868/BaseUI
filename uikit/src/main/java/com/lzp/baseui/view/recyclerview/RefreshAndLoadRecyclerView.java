@@ -93,17 +93,7 @@ public class RefreshAndLoadRecyclerView<T> extends CustomPtrClassicFrameLayout
      * 设置某一页的数据
      */
     public void setPageData(List<T> list, boolean isLast) {
-        mListDataManager.onGetListComplete(list, isLast);
-        // 如果是最后一页
-        if (isLast) {
-            if (loadMoreFooterState != null) {
-                loadMoreFooterState.isLastState();
-            }
-        } else {
-            if (loadMoreFooterState != null) {
-                loadMoreFooterState.normalState();
-            }
-        }
+        setPageData(list, "", isLast);
     }
 
     public BaseRecycleViewAdapter getAdapter() {
