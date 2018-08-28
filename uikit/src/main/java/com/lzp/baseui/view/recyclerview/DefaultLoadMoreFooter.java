@@ -6,7 +6,8 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.lzp.demo.R;
+import com.lzp.baseui.R;
+
 
 /**
  * Created by li.zhipeng on 2018/8/24.
