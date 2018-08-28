@@ -1,4 +1,4 @@
-package com.lzp.demo;
+package com.lzp.baseui;
 
 import org.junit.Test;
 

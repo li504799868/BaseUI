@@ -3,7 +3,8 @@ package com.lzp.demo
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
-import com.lzp.demo.fragment.BaseFragment
+import com.lzp.baseui.PagerViewFragmentAdapter
+import com.lzp.baseui.fragment.BaseFragment
 
 class ViewPagerActivity : AppCompatActivity(), PagerViewFragmentAdapter.OnFragmentLoadListener<BaseFragment> {
 

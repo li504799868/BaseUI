@@ -3,7 +3,7 @@ package com.lzp.demo
 import android.view.Window
 import android.widget.TextView
 import android.widget.Toast
-import com.lzp.demo.activity.BaseActivity
+import com.lzp.baseui.activity.BaseActivity
 
 class ExtendBaseActivity : BaseActivity() {
 

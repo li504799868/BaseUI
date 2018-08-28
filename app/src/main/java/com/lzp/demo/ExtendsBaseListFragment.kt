@@ -1,9 +1,9 @@
 package com.lzp.demo
 
 import android.content.Context
-import com.lzp.demo.fragment.BaseListFragment
-import com.lzp.demo.recyclerview.BaseRecycleViewAdapter
-import com.lzp.demo.recyclerview.RecyclerViewHolder
+import com.lzp.baseui.fragment.BaseListFragment
+import com.lzp.baseui.recyclerview.BaseRecycleViewAdapter
+import com.lzp.baseui.recyclerview.RecyclerViewHolder
 
 
 class ExtendsBaseListFragment : BaseListFragment<String>() {

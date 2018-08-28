@@ -1,7 +1,7 @@
 package com.lzp.demo
 
 import android.widget.Toast
-import com.lzp.demo.fragment.BaseFragment
+import com.lzp.baseui.fragment.BaseFragment
 
 /**
  * Created by li.zhipeng on 2018/8/27.

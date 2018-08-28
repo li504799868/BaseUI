@@ -2,7 +2,7 @@ package com.lzp.demo
 
 import android.os.Handler
 import android.widget.Toast
-import com.lzp.demo.fragment.BaseScrollFragment
+import com.lzp.baseui.fragment.BaseScrollFragment
 
 class ExtendsBaseScrollFragment : BaseScrollFragment() {
 
