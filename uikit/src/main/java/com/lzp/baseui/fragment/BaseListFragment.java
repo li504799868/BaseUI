@@ -2,9 +2,9 @@ package com.lzp.baseui.fragment;
 
 import android.util.Log;
 
+import com.lzp.baseui.R;
 import com.lzp.baseui.recyclerview.BaseRecycleViewAdapter;
 import com.lzp.baseui.view.recyclerview.RefreshAndLoadRecyclerView;
-import com.lzp.demo.R;
 
 import java.util.List;
 

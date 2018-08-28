@@ -3,7 +3,7 @@ package com.lzp.baseui.fragment;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.lzp.demo.R;
+import com.lzp.baseui.R;
 import com.lzp.baseui.view.CustomPtrClassicFrameLayout;
 import com.lzp.baseui.view.RefreshAndLoadScrollView;
 import com.lzp.baseui.view.ScrollBottomLoadingView;
